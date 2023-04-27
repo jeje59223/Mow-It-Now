@@ -1,24 +1,32 @@
-const cardinalPoints: [string, string, string, string] = ['W', 'N', 'E', 'S'];
-const upperRightCorner: [number, number] = [5, 5];
-const maxVertical: number = upperRightCorner[1];
-const maxHorizontal: number = upperRightCorner[0]
+import { Orientation } from "../models/Orientation";
+import { Surface } from "../models/Surface";
+import {Instruction} from "../models/Instruction";
+import {Mower} from "../models/Mower";
+import {Coordonates} from "../models/Coordonates";
 
-export const moveMower = (mvt: Array<string | number>, mower): [number, number, string] => {
-    let [horizontal, vertical, orientation] = mower;
-    let coordinates: [number, number, string] = [horizontal, vertical, orientation];
+const cardinalPoints: Orientation[] = ['W', 'N', 'E', 'S'];
+const upperRightCorner: Surface = { vertical: 5, horizontal: 5 };
+const maxVertical: number = upperRightCorner.vertical;
+const maxHorizontal: number = upperRightCorner.horizontal;
+
+export const moveMower = (mvt: Mower['instructions'], mower: Mower['position']): Coordonates => {
+    let horizontal = mower.horizontal;
+    let vertical = mower.vertical;
+    let orientation = mower.orientation;
+    let coordinates: Coordonates = { horizontal, vertical, orientation };
     let indexCardinalPoints: number = cardinalPoints.findIndex(e => e === orientation);
 
     mvt.forEach((command: string) => {
         if (command === 'G') {
             indexCardinalPoints = (indexCardinalPoints + 3) % 4;
             orientation = cardinalPoints[indexCardinalPoints];
-            coordinates[2] = orientation;
+            coordinates.orientation = orientation;
         }
 
         else if (command === 'D') {
             indexCardinalPoints = (indexCardinalPoints + 1) % 4;
             orientation = cardinalPoints[indexCardinalPoints];
-            coordinates[2] = orientation;
+            coordinates.orientation = orientation;
         }
 
         else if (command === 'A') {
@@ -42,8 +50,8 @@ export const moveMower = (mvt: Array<string | number>, mower): [number, number, 
             if (horizontal < 0) horizontal = 0;
             if (horizontal > maxHorizontal) horizontal = maxHorizontal;
 
-            coordinates[0] = horizontal;
-            coordinates[1] = vertical;
+            coordinates.horizontal = horizontal;
+            coordinates.vertical = vertical;
         }
     })
     return coordinates;
