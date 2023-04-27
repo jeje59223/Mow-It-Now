@@ -6,7 +6,7 @@ describe('convertStringToArray', () => {
 
     const convert = convertStringToArray(example);
 
-    expect(convert).toEqual(["A", "A", "D", "A", "G", "G", "A", "D"])
+    expect(convert).toEqual(["A", "A", "D", "A", "G", "G", "A", "D"]);
   });
 
   test('should return a string with spaces an array', () => {
@@ -14,6 +14,6 @@ describe('convertStringToArray', () => {
 
     const convert = convertStringToArray(example);
 
-    expect(convert).toEqual([1, 2, "N"])
+    expect(convert).toEqual([1, 2, "N"]);
   })
 })
