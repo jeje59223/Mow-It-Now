@@ -16,7 +16,8 @@ la première ligne donne la position initiale de la tondeuse, ainsi que son orie
 la seconde ligne est une série d'instructions ordonnant à la tondeuse d'explorer la pelouse. Les instructions sont une suite de caractères sans espaces.<br />
 Chaque tondeuse se déplace de façon séquentielle, ce qui signifie que la seconde tondeuse ne bouge que lorsque la première a exécuté intégralement sa série d'instructions.
 Lorsqu'une tondeuse achève une série d'instructions, elle communique sa position et son orientation.
-####OBJECTIF
+
+###OBJECTIF
 Concevoir et écrire un programme s'exécutant sur une JVM ≥ 17 ou Node.js ≥ 18.15, et implémentant la spécification ci-dessus et passant le test ci-après
 Le fichier suivant est fourni en entrée :
 ---------
