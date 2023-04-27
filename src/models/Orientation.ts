@@ -1,1 +1,1 @@
-export type Orientation = "N" | "E" | "S" | "W";
+export type Orientation = 'N' | 'E' | 'S' | 'W'

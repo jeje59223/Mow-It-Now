@@ -1,1 +1,1 @@
-export type Instruction = "G" | "D" | "A";
+export type Instruction = 'G' | 'D' | 'A'

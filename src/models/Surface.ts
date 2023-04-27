@@ -1,4 +1,4 @@
-export type Surface = {
-    vertical: number;
-    horizontal: number;
-};
+export interface Surface {
+  vertical: number
+  horizontal: number
+}

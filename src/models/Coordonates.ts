@@ -1,7 +1,7 @@
-import { Orientation } from "./Orientation";
+import { type Orientation } from './Orientation';
 
-export type Coordonates = {
-    horizontal: number;
-    vertical: number;
-    orientation: Orientation
+export interface Coordonates {
+  horizontal: number
+  vertical: number
+  orientation: Orientation
 }

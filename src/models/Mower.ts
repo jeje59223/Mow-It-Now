@@ -1,7 +1,7 @@
-import { Instruction } from "./Instruction";
-import { Coordonates } from "./Coordonates";
+import { type Instruction } from './Instruction';
+import { type Coordonates } from './Coordonates';
 
-export type Mower = {
-    position: Coordonates;
-    instructions: Instruction[];
-};
+export interface Mower {
+  position: Coordonates
+  instructions: Instruction[]
+}
