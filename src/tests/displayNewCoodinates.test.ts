@@ -1,9 +1,8 @@
-import { calculateNewCoordinates } from '../utils/calculateNewCoordinates';
 import { type Mower } from '../models/Mower';
-import { moveMower } from '../utils/moveMower';
+import { displayNewCoordinates } from '../utils/displayNewCoordinates';
 
-describe('calculateNewCoordinates', () => {
-  test('should return new coordinates for one mower', () => {
+describe('displayNewCoodinates', () => {
+  test('should display new coordinates', () => {
     const mowers1: Mower[] = [
       {
         position: { horizontal: 1, vertical: 2, orientation: 'N' },
@@ -11,12 +10,12 @@ describe('calculateNewCoordinates', () => {
       }
     ];
 
-    const newCoordonatesMowers1 = calculateNewCoordinates(mowers1);
+    const result1 = displayNewCoordinates(mowers1);
 
-    expect(newCoordonatesMowers1).toEqual([{ horizontal: 1, orientation: 'N', vertical: 3 }]);
+    expect(result1).toBe('Mower 1 : 1 3 N\n');
   });
 
-  test('should return new coordinates for two mowers', () => {
+  test('should display new coordinates with 2 mowers', () => {
     const mowers2: Mower[] = [
       {
         position: { horizontal: 1, vertical: 2, orientation: 'N' },
@@ -29,13 +28,13 @@ describe('calculateNewCoordinates', () => {
 
     ];
 
-    const newCoordonates = calculateNewCoordinates(mowers2);
+    const result2 = displayNewCoordinates(mowers2);
 
-    expect(newCoordonates).toEqual([{ horizontal: 1, orientation: 'N', vertical: 3 }, { horizontal: 5, orientation: 'E', vertical: 1 }]);
+    expect(result2).toBe('Mower 1 : 1 3 N\nMower 2 : 5 1 E\n');
   });
 
-  test('should return new coordinates for three mowers', () => {
-    const mowers: Mower[] = [
+  test('should display new coordinates with 3 mowers', () => {
+    const mowers3: Mower[] = [
       {
         position: { horizontal: 1, vertical: 2, orientation: 'N' },
         instructions: ['G', 'A', 'G', 'A', 'G', 'A', 'G', 'A', 'A']
@@ -50,8 +49,8 @@ describe('calculateNewCoordinates', () => {
       }
     ];
 
-    const newCoordonates = calculateNewCoordinates(mowers);
+    const result3 = displayNewCoordinates(mowers3);
 
-    expect(newCoordonates).toEqual([{ horizontal: 1, orientation: 'N', vertical: 3 }, { horizontal: 5, orientation: 'E', vertical: 1 }, { horizontal: 3, orientation: 'S', vertical: 1 }]);
+    expect(result3).toBe('Mower 1 : 1 3 N\nMower 2 : 5 1 E\nMower 3 : 3 1 S\n');
   });
 });

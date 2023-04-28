@@ -3,6 +3,7 @@ import { calculateNewCoordinates } from './utils/calculateNewCoordinates';
 import { type Instruction } from './models/Instruction';
 import { convertStringToObject } from './utils/convertStringToObject';
 import { type Coordonates } from './models/Coordonates';
+import { type Mower } from './models/Mower';
 
 const startingPointProgrammingMower1 = '1 2 N';
 const startingPointProgrammingMower2 = '3 3 E';
@@ -16,7 +17,9 @@ const movementsMower2: Instruction[] = convertInstructionsToArray(mowerProgrammi
 const startingPointMower1: Coordonates = convertStringToObject(startingPointProgrammingMower1);
 const startingPointMower2: Coordonates = convertStringToObject(startingPointProgrammingMower2);
 
-const mowers: Coordonates[] = [startingPointMower1, startingPointMower2];
-const mowersMovements: Instruction[][] = [movementsMower1, movementsMower2];
+const mowers: Mower[] = [
+  { position: startingPointMower1, instructions: movementsMower1 },
+  { position: startingPointMower2, instructions: movementsMower2 }
+];
 
-calculateNewCoordinates(mowers, mowersMovements);
+calculateNewCoordinates(mowers);
