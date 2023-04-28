@@ -1,6 +1,5 @@
 import { calculateNewCoordinates } from '../utils/calculateNewCoordinates';
 import { type Mower } from '../models/Mower';
-import { moveMower } from '../utils/moveMower';
 
 describe('calculateNewCoordinates', () => {
   test('should return new coordinates for one mower', () => {
