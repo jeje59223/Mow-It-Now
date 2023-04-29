@@ -15,7 +15,7 @@ const getNextOrientation = (index: Orientation, turn: 'G' | 'D'): Orientation =>
   return cardinalPoints[newIndex];
 };
 
-const getNextPosition = (position: Mower['position'], instruction: Instruction): Coordonates => {
+const getNextPosition = (position: Coordonates, instruction: Instruction): Coordonates => {
   if (instruction === 'A') {
     let horizontal = position.horizontal;
     let vertical = position.vertical;
