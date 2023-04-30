@@ -42,6 +42,9 @@ On attend le résultat suivant (position finale des tondeuses) :
 
 ------
 
+## Diagramme
+<img width="1021" alt="Capture d’écran 2023-04-30 à 10 44 44" src="https://user-images.githubusercontent.com/47606138/235344152-c5ece760-3c41-4438-b6cc-d17362d89f7d.png">
+
 ## Required tools
 
 - Node 16.15
