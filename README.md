@@ -49,5 +49,5 @@ On attend le résultat suivant (position finale des tondeuses) :
 
 - Node 16.15
 
-## `npm test`
+### `npm test`
 Lancer le mode test
